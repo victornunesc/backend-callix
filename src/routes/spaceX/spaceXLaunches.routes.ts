@@ -5,5 +5,9 @@ const spaceXLaunchesRouter = Router();
 
 spaceXLaunchesRouter.get("/next", spaceXLaunchesControllers.getNextLaunch);
 spaceXLaunchesRouter.get("/latest", spaceXLaunchesControllers.getLatestLaunch);
+spaceXLaunchesRouter.get(
+  "/upcoming",
+  spaceXLaunchesControllers.getUpcomingLaunches
+);
 
 export default spaceXLaunchesRouter;

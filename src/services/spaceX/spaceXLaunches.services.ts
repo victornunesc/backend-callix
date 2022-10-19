@@ -12,6 +12,12 @@ class SpaceXLaunchesService {
 
     return data;
   };
+
+  getUpcomingLaunches = async () => {
+    const { data } = await spaceX.get("/v5/launches/upcoming");
+
+    return data;
+  };
 }
 
 export default SpaceXLaunchesService;
