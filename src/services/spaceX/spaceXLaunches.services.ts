@@ -18,6 +18,12 @@ class SpaceXLaunchesService {
 
     return data;
   };
+
+  getPastLaunches = async () => {
+    const { data } = await spaceX.get("/v5/launches/past");
+
+    return data;
+  };
 }
 
 export default SpaceXLaunchesService;

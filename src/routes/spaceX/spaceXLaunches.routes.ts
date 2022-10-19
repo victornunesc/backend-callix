@@ -9,5 +9,6 @@ spaceXLaunchesRouter.get(
   "/upcoming",
   spaceXLaunchesControllers.getUpcomingLaunches
 );
+spaceXLaunchesRouter.get("/past", spaceXLaunchesControllers.getPastLaunches);
 
 export default spaceXLaunchesRouter;
