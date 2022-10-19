@@ -6,6 +6,12 @@ class SpaceXLaunchesService {
 
     return data;
   };
+
+  getLatestLaunch = async () => {
+    const { data } = await spaceX.get("/v5/launches/latest");
+
+    return data;
+  };
 }
 
 export default SpaceXLaunchesService;

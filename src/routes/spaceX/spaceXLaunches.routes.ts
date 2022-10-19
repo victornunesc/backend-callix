@@ -4,5 +4,6 @@ import spaceXLaunchesControllers from "../../controllers/spaceX/spaceXLaunches.c
 const spaceXLaunchesRouter = Router();
 
 spaceXLaunchesRouter.get("/next", spaceXLaunchesControllers.getNextLaunch);
+spaceXLaunchesRouter.get("/latest", spaceXLaunchesControllers.getLatestLaunch);
 
 export default spaceXLaunchesRouter;
