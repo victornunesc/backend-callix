@@ -6,7 +6,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node-dev --files --rs src/server.ts",
     "build": "tsc",
-    "postinstall": "yarn start build"
+    "postinstall": "yarn build"
   },
   "engines": {
     "node": "16.14.2"
