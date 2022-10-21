@@ -1,4 +1,4 @@
-# SpaceX - CalliX
+# Space - CalliX
 
 Front-end deploy: `https://space-callix.vercel.app/`
 
