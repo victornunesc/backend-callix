@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export const getLaunch = yup.object().shape({
+export const getLaunchShape = yup.object().shape({
   id: yup.string(),
   links: yup.object().shape({
     patch: yup.object().shape({
@@ -19,4 +19,4 @@ export const getLaunch = yup.object().shape({
   date_utc: yup.string(),
 });
 
-export const getLaunches = yup.array().of(getLaunch);
+export const getLaunchesShape = yup.array().of(getLaunchShape);

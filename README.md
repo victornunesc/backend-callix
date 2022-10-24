@@ -12,6 +12,7 @@ Back-end:
     - Typescript
     - Node.js
     - Express
+    - Redis
 
 Front-end:
 
@@ -73,41 +74,39 @@ Base URL: `https://backend-callix.herokuapp.com`
 
 ```json
 {
-  {
-	"date_utc": "2022-10-05T16:00:00.000Z",
-	"date_unix": 1664985600,
-	"name": "Crew-5",
-	"flight_number": 187,
-	"crew": [
-		{
-			"crew": "62dd7196202306255024d13c",
-			"role": "Commander"
-		},
-		{
-			"crew": "62dd71c9202306255024d13d",
-			"role": "Pilot"
-		},
-		{
-			"crew": "62dd7210202306255024d13e",
-			"role": "Mission Specialist 1"
-		},
-		{
-			"crew": "62dd7253202306255024d13f",
-			"role": "Mission Specialist 2"
-		}
-	],
-	"failures": [],
-	"success": true,
-	"rocket": "5e9d0d95eda69973a809d1ec",
-	"links": {
-		"wikipedia": "https://en.wikipedia.org/wiki/SpaceX_Crew-5",
-		"patch": {
-			"small": "https://images2.imgbox.com/eb/d8/D1Yywp0w_o.png",
-			"large": "https://images2.imgbox.com/33/2e/k6VE4iYl_o.png"
-		}
-	},
-	"id": "62dd70d5202306255024d139"
-}
+  "date_utc": "2022-10-05T16:00:00.000Z",
+  "date_unix": 1664985600,
+  "name": "Crew-5",
+  "flight_number": 187,
+  "crew": [
+    {
+      "crew": "62dd7196202306255024d13c",
+      "role": "Commander"
+    },
+    {
+      "crew": "62dd71c9202306255024d13d",
+      "role": "Pilot"
+    },
+    {
+      "crew": "62dd7210202306255024d13e",
+      "role": "Mission Specialist 1"
+    },
+    {
+      "crew": "62dd7253202306255024d13f",
+      "role": "Mission Specialist 2"
+    }
+  ],
+  "failures": [],
+  "success": true,
+  "rocket": "5e9d0d95eda69973a809d1ec",
+  "links": {
+    "wikipedia": "https://en.wikipedia.org/wiki/SpaceX_Crew-5",
+    "patch": {
+      "small": "https://images2.imgbox.com/eb/d8/D1Yywp0w_o.png",
+      "large": "https://images2.imgbox.com/33/2e/k6VE4iYl_o.png"
+    }
+  },
+  "id": "62dd70d5202306255024d139"
 }
 ```
 

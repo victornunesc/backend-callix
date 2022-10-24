@@ -1,48 +1,59 @@
 import { Request, Response } from "express";
 import { SpaceXLaunchesService } from "../../services/";
 
-class SpaceXLaunchesController {
-  getNextLaunch = async (_: Request, res: Response) => {
-    try {
-      const spaceXService = new SpaceXLaunchesService();
-      const data = await spaceXService.getNextLaunch();
+interface ISpaceXLaunchesController {
+  getNextLaunch: (req: Request, res: Response) => Promise<void>;
+  getLatestLaunch: (req: Request, res: Response) => Promise<void>;
+  getUpcomingLaunches: (req: Request, res: Response) => Promise<void>;
+  getPastLaunches: (req: Request, res: Response) => Promise<void>;
+}
 
-      return res.status(200).json(data);
-    } catch (err) {
-      return res.status(err.response.status).json({ error: err.message });
+class SpaceXLaunchesController implements ISpaceXLaunchesController {
+  getNextLaunch = async (req: Request, res: Response): Promise<void> => {
+    const spaceXService = new SpaceXLaunchesService();
+
+    try {
+      const data = await spaceXService.getNextLaunch(req);
+
+      res.status(200).json(data);
+    } catch (err: any) {
+      res.status(err.response.status).json({ error: err.message });
     }
   };
 
-  getLatestLaunch = async (_: Request, res: Response) => {
-    try {
-      const spaceXService = new SpaceXLaunchesService();
-      const data = await spaceXService.getLatestLaunch();
+  getLatestLaunch = async (req: Request, res: Response): Promise<void> => {
+    const spaceXService = new SpaceXLaunchesService();
 
-      return res.status(200).json(data);
-    } catch (err) {
-      return res.status(err.response.status).json({ error: err.message });
+    try {
+      const data = await spaceXService.getLatestLaunch(req);
+
+      res.status(200).json(data);
+    } catch (err: any) {
+      res.status(err.response.status).json({ error: err.message });
     }
   };
 
-  getUpcomingLaunches = async (_: Request, res: Response) => {
-    try {
-      const spaceXService = new SpaceXLaunchesService();
-      const data = await spaceXService.getUpcomingLaunches();
+  getUpcomingLaunches = async (req: Request, res: Response): Promise<void> => {
+    const spaceXService = new SpaceXLaunchesService();
 
-      return res.status(200).json(data);
-    } catch (err) {
-      return res.status(err.response.status).json({ error: err.message });
+    try {
+      const data = await spaceXService.getUpcomingLaunches(req);
+
+      res.status(200).json(data);
+    } catch (err: any) {
+      res.status(err.response.status).json({ error: err.message });
     }
   };
 
-  getPastLaunches = async (_: Request, res: Response) => {
-    try {
-      const spaceXService = new SpaceXLaunchesService();
-      const data = await spaceXService.getPastLaunches();
+  getPastLaunches = async (req: Request, res: Response): Promise<void> => {
+    const spaceXService = new SpaceXLaunchesService();
 
-      return res.status(200).json(data);
-    } catch (err) {
-      return res.status(err.response.status).json({ error: err.message });
+    try {
+      const data = await spaceXService.getPastLaunches(req);
+
+      res.status(200).json(data);
+    } catch (err: any) {
+      res.status(err.response.status).json({ error: err.message });
     }
   };
 }
