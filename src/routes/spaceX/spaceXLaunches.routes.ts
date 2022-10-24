@@ -1,14 +1,28 @@
 import { Router } from "express";
-import spaceXLaunchesControllers from "../../controllers/spaceX/spaceXLaunches.controllers";
+import { SpaceXLaunchesController } from "../../controllers/";
+import { cacheData } from "../../middlewares";
 
 const spaceXLaunchesRouter = Router();
 
-spaceXLaunchesRouter.get("/next", spaceXLaunchesControllers.getNextLaunch);
-spaceXLaunchesRouter.get("/latest", spaceXLaunchesControllers.getLatestLaunch);
+spaceXLaunchesRouter.get(
+  "/next",
+  cacheData,
+  SpaceXLaunchesController.getNextLaunch
+);
+spaceXLaunchesRouter.get(
+  "/latest",
+  cacheData,
+  SpaceXLaunchesController.getLatestLaunch
+);
 spaceXLaunchesRouter.get(
   "/upcoming",
-  spaceXLaunchesControllers.getUpcomingLaunches
+  cacheData,
+  SpaceXLaunchesController.getUpcomingLaunches
 );
-spaceXLaunchesRouter.get("/past", spaceXLaunchesControllers.getPastLaunches);
+spaceXLaunchesRouter.get(
+  "/past",
+  cacheData,
+  SpaceXLaunchesController.getPastLaunches
+);
 
 export default spaceXLaunchesRouter;

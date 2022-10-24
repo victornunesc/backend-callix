@@ -1,3 +1,3 @@
-import { getLaunch, getLaunches } from "./lauches.schema";
+import { getLaunchShape, getLaunchesShape } from "./lauches.schema";
 
-export { getLaunch, getLaunches };
+export { getLaunchShape, getLaunchesShape };
