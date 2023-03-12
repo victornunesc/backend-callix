@@ -8,8 +8,7 @@ app.listen(PORT, () => {
 });
 
 const redisClient = createClient({
-  url: process.env.REDIS_URL,
-  password: process.env.REDIS_PASSWORD,
+  url: process.env.REDISCLOUD_URL,
   socket: {
     tls: true,
     rejectUnauthorized: false,
