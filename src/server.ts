@@ -8,11 +8,11 @@ app.listen(PORT, () => {
 });
 
 const redisClient = createClient({
-  url: process.env.REDISCLOUD_URL,
+  password: process.env.REDISCLOUD_PASSWORD,
   socket: {
-    tls: true,
-    rejectUnauthorized: false,
-  },
+      host: process.env.REDISCLOUD_HOST,
+      port: Number(process.env.REDISCLOUD_PORT)
+  }
 });
 
 redisClient.on("error", (error) => console.error(`Error : ${error}`));
