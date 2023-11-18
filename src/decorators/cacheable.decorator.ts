@@ -9,10 +9,12 @@ export const cacheable =
     descriptor.value = async function (req: Request) {
       const result = await originalMethod(req);
 
-      await redisClient.set(req.url, JSON.stringify(result), {
-        EX: EX,
-        NX: true,
-      });
+      if (redisClient.isReady) {      
+        await redisClient.set(req.url, JSON.stringify(result), {
+          EX: EX,
+          NX: true,
+        });
+      }
 
       return result;
     };

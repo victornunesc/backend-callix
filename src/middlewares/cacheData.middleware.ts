@@ -9,6 +9,10 @@ export const cacheData = async (
   const url = req.url;
 
   try {
+    if (!redisClient.isReady) {
+      next()
+    }
+    
     const cacheResults = await redisClient.get(url);
 
     if (cacheResults) {
